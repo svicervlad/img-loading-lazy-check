@@ -38,9 +38,9 @@ async function getUrls() {
         if (link.href.indexOf('/') !== 0) {
             continue;
         }
-        // process.stdout.write(link.href.toString() + '\n');
         allow_links.push(DOMAIN + link.href);
     }
+    process.stdout.write('Total links: ' + allow_links.length + '\n');
     return allow_links;
 }
 
