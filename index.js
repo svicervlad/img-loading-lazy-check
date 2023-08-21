@@ -3,11 +3,16 @@ const { JSDOM } = jsdom;
 
 const DOMAIN = 'https://next.topmba.com';
 
-async function getUrls() {
-    const response = await fetch(DOMAIN);
+async function getPageDom (url) {
+    const response = await fetch(url);
     const src = await response.text();
     let dom = await new JSDOM(src);
     let document = dom.window.document
+    return document;
+}
+
+async function getUrls() {
+    let document = await getPageDom(DOMAIN);
     let links = await document.querySelectorAll('a');
     let allow_links = [];
     for (let link of links.values()) {
@@ -42,14 +47,6 @@ async function getUrls() {
     }
     process.stdout.write('Total links: ' + allow_links.length + '\n');
     return allow_links;
-}
-
-async function getPageDom (url) {
-    const response = await fetch(url);
-    const src = await response.text();
-    let dom = await new JSDOM(src);
-    let document = dom.window.document
-    return document;
 }
 
 // [{'link': '/sdfhksdhf/sjfhsdkjf', 'src': '/jkshdfkj/sdkjfhkhjsdf.jpg'}, {'link': '/sdfhksdhf/sjfhsdkjf', 'src': '/jkshdfkj/sdkjfhkhjsdf.jpg'}]
