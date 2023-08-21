@@ -1,0 +1,14 @@
+{
+  "name": "img-loading-lazy-check",
+  "version": "1.0.0",
+  "description": "Check if site is using lazy loading for images",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  }
+}
