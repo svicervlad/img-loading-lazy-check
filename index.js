@@ -49,8 +49,6 @@ async function getUrls() {
     return allow_links;
 }
 
-// [{'link': '/sdfhksdhf/sjfhsdkjf', 'src': '/jkshdfkj/sdkjfhkhjsdf.jpg'}, {'link': '/sdfhksdhf/sjfhsdkjf', 'src': '/jkshdfkj/sdkjfhkhjsdf.jpg'}]
-
 (async function main () {
     let urls = await getUrls();
     let results = [];
