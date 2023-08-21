@@ -9,12 +9,13 @@
 Clone repository:
 
 ```bash
-git clone <todo>
+git clone https://github.com/svicervlad/img-loading-lazy-check.git
 ```
 
 Install dependencies:
 
 ```bash
+cd img-loading-lazy-check
 npm install
 ```
 
