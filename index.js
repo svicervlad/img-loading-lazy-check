@@ -73,7 +73,9 @@ async function getUrls() {
             imgs_without_lazy.push(img.src);
             process.stdout.write(url + ':  ' + img.src.toString() + '\n');
         }
-        results.push({'link': url, 'without-lazy': imgs_without_lazy});
+        if (imgs_without_lazy.length > 0) {
+            results.push({'link': url, 'without-lazy': imgs_without_lazy});
+        }
     }
     // Write results to file
     let fs = require('fs');
