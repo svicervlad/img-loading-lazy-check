@@ -74,12 +74,6 @@ async function getPageDom (url) {
             if (img.hasAttribute('loading') && img.getAttribute('loading') === 'lazy') {
                 continue;
             }
-
-            // TM TODO fix in code
-            if (img.hasAttribute('loadin') && img.getAttribute('loading') === 'lazy') {
-                continue;
-            }
-
             results.push({'link': url, 'src': img.src});
             process.stdout.write(url + ':  ' + img.src.toString() + '\n');
         }
