@@ -58,6 +58,7 @@ async function getUrls() {
         let dom = await getPageDom(url);
         // Get all img tags
         let imgs = await dom.querySelectorAll('img');
+        let imgs_without_lazy = [];
         for (let img of imgs.values()) {
             // Check if img tag has src attribute
             if (!img.hasAttribute('src')) {
@@ -71,9 +72,10 @@ async function getUrls() {
             if (img.hasAttribute('loading') && img.getAttribute('loading') === 'lazy') {
                 continue;
             }
-            results.push({'link': url, 'src': img.src});
+            imgs_without_lazy.push(img.src);
             process.stdout.write(url + ':  ' + img.src.toString() + '\n');
         }
+        results.push({'link': url, 'without-lazy': imgs_without_lazy});
     }
     // Write results to file
     let fs = require('fs');
