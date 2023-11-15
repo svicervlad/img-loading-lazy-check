@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 
 test('Find console message', async ({ page }) => {
   const DOMAIN = 'https://www.topuniversities.com';
-  const TARGET_MESSAGE = 'MIME Type';
+  const TARGET_MESSAGE = 'Function used here';
   await page.goto(DOMAIN);
 
   // Get all a elements
