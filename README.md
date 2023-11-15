@@ -9,7 +9,7 @@ npm install
 npx playwright install chromium
 ```
 
-## 2. Run
+### 2. Run
 
 ```bash
 npx playwright test
